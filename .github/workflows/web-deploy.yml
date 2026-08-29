@@ -1,0 +1,14 @@
+name: Deploy Web App
+
+on:
+  push:
+    paths:
+      - 'web-app/**' # Only trigger if Web files change
+      - '.github/workflows/web-deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Steps to deploy web-app/ folder to your hosting service
